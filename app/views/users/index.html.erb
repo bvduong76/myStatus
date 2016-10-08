@@ -1,0 +1,30 @@
+<h1>All Users</h1>
+<table>
+  <tr>
+    <thead>
+      <tr>
+        <th>
+          Avatar
+        </th>
+
+        <th>
+          Name
+        </th>
+      </tr>
+    </thead>
+  </tr>
+  <% @users.each do |user| %>
+      <tr>
+        <td>
+          user.avatar
+        </td>
+        <td>
+          user.fullName
+        </td>
+        <td>
+          Follow
+        </td>
+      </tr>
+  <% end %>
+</table>
+<%= link_to 'New User', new_user_path %>
