@@ -1,14 +1,17 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<% provide(:title, 'Login') %>
+<h1>Login</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
         <br/>
         <%= f.label :fullName %>
         <%= f.text_field :fullName %>
+        <br/>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
         <br/>
         <%= f.label :password %>
         <%= f.password_field :password %>

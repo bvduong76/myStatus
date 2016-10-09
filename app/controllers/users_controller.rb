@@ -28,11 +28,13 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
   def login
 
   end
+
   private
   def signup_params
-    params.require(:user).permit(:username, :fullName, :email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :fullName, :password, :password_confirmation)
   end
 end
