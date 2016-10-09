@@ -13,7 +13,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(signup_params)
-    @user.save
+    if @user.save
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -29,6 +33,6 @@ class UsersController < ApplicationController
   end
   private
   def signup_params
-    params.require(:users).permit(:username, :fullName, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :fullName, :email, :password, :password_confirmation)
   end
 end
